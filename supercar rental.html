@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Cars - Super Cars</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background: url('111111.png') no-repeat center center fixed;
+            background-size: cover;
+            color: rgb(162, 83, 83);
+        }
+
+        header {
+            background-color: transparent;
+            color: #fffefe;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav ul {
+            padding: 0;
+            list-style: none;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: rgb(73, 145, 183);
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .navbar-toggle {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+            }
+
+            .navbar.active ul {
+                display: flex;
+            }
+
+            .navbar-toggle {
+                display: block;
+                background-color: #333;
+                color: rgb(0, 0, 0);
+                padding: 10px;
+                cursor: pointer;
+            }
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .car-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .car {
+            width: 250px;
+            padding: 15px;
+            background-color: transparent; /* Change to transparent to match the background */
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            color: rgb(160, 80, 80); /* Match text color */
+        }
+
+        .car img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .car:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Super Cars</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="rental inventory.html">Inventory</a></li>
+                <li><a href="Luxury Cars.html">Luxury Cars</a></li>
+                <li><a href="budget rental.html">Budget Cars</a></li>
+                <li><a href="home.html">Logout</a></li>
+            </ul>
+        </nav>
+        <div class="navbar-toggle">☰</div>
+    </header>
+
+    <main>
+        <section class="category">
+            <h2>Available Super Cars</h2>
+            <div class="car-list">
+                <div class="car">
+                    <img src="super1.jpg" alt="Super Car 1">
+                    <h3>2023 Ferrari F8 Tributo</h3>
+                    <p>Price: Rs3000 / hr</p>
+                    <p>Mileage: 10.5km</p>
+                    <button onclick="location.href='rental payment.html'">Rent Now</button>
+                </div>
+                <div class="car">
+                    <img src="super2.jpg" alt="Super Car 2">
+                    <h3>2022 Lamborghini Huracan</h3>
+                    <p>Price: Rs5000 / hr</p>
+                    <p>Mileage: 9km</p>
+                    <button onclick="location.href='rental payment.html'">Rent Now</button>
+                </div>
+                <div class="car">
+                    <img src="super3.jpg" alt="Super Car 3">
+                    <h3>2020 McLaren Artura</h3>
+                    <p>Price: Rs7000 / hr</p>
+                    <p>Mileage: 6km</p>
+                    <button onclick="location.href='rental payment.html'">Rent Now</button>
+                </div>
+                <div class="car">
+                    <img src="super4.jpg" alt="Super Car 4">
+                    <h3>2018 Lamborghini</h3>
+                    <p>Price: Rs3000 / hr</p>
+                    <p>Mileage: 7.86km</p>
+                    <button onclick="location.href='rental payment.html'">Rent Now</button>
+                </div>
+                <div class="car">
+                    <img src="super5.jpg" alt="Super Car 5">
+                    <h3>2010 Ferrari Enzo</h3>
+                    <p>Price: Rs2000 / hr</p>
+                    <p>Mileage: 8.75km</p>
+                    <button onclick="location.href='rental payment.html'">Rent Now</button>
+                </div>
+                <div class="car">
+                    <img src="super6.png" alt="Super Car 6">
+                    <h3>2009 Porsche 911 GT2</h3>
+                    <p>Price: Rs2,1000 / hr</p>
+                    <p>Mileage: 7.5km</p>
+                    <button onclick="location.href='rental payment.html'">Rent Now</button>
+                </div>
+                <div class="car">
+                    <img src="super7.jpg" alt="Super Car 7">
+                    <h3>2019 Lotus Evija</h3>
+                    <p>Price: Rs1400 / hr</p>
+                    <p>Mileage: 9km</p>
+                    <button onclick="location.href='rental payment.html'">Rent Now</button>
+                </div>
+                <div class="car">
+                    <img src="super8.jpg" alt="Super Car 8">
+                    <h3>2023 Chrysler Pacific Plug</h3>
+                    <p>Price: Rs1000 / hr</p>
+                    <p>Mileage: 11.23km</p>
+                    <button onclick="location.href='rental payment.html'">Rent Now</button>
+                </div>
+                <div class="car">
+                    <img src="super9.jpg" alt="Super Car 9">
+                    <h3>2023 Lamborghini Revuelto</h3>
+                    <p>Price: Rs4000 / hr</p>
+                    <p>Mileage: 6.89km</p>
+                    <button onclick="location.href='rental payment.html'">Rent Now</button>
+                </div>
+                <div class="car">
+                    <img src="super10.jpg" alt="Super Car 10">
+                    <h3>2019 Bugatti La Voiture Noire</h3>
+                    <p>Price: Rs1320 / hr</p>
+                    <p>Mileage: 7km</p>
+                    <button onclick="location.href='rental payment.html'">Rent Now</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Elite Cars. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const navbar = document.querySelector('.navbar');
+        const toggleButton = document.querySelector('.navbar-toggle');
+
+        toggleButton.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

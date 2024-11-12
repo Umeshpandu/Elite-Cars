@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Elite Car Models</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        main {
+            max-width: 600px;
+            width: 100%;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        h2, h3 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label, select, input {
+            width: 100%;
+            text-align: left;
+        }
+
+        select, input {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            color: white;
+            background-color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        footer {
+            margin-top: 20px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h2>Elite Cars Payment</h2>
+        <h3>Confirm Your Purchase</h3>
+        <form id="payment-form" onsubmit="savePaymentData(event)">
+            <label for="card-number">Card Number:</label>
+            <input type="text" id="card-number" name="card-number" required>
+
+            <label for="expiration-date">Expiration Date (MM/YY):</label>
+            <input type="text" id="expiration-date" name="expiration-date" required>
+
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" required>
+
+            <label for="car-name">Car Model:</label>
+            <select id="car-name" name="car-name" required>
+                <option value="2023 Mercedes-Benz S-Class">2023 Mercedes-Benz S-Class</option>
+                <option value="2023 BMW 7 Series">2023 BMW 7 Series</option>
+                <option value="2023 Audi A8">2023 Audi A8</option>
+                <option value="2023 Lexus LS">2023 Lexus LS</option>
+                <option value="2023 Tesla Model S">2023 Tesla Model S</option>
+                <option value="2023 Porsche Panamera">2023 Porsche Panamera</option>
+                <option value="2023 Jaguar XJ">2023 Jaguar XJ</option>
+                <option value="2023 Cadillac CT6">2023 Cadillac CT6</option>
+                <option value="2023 Genesis G90">2023 Genesis G90</option>
+                <option value="2023 Rolls-Royce Ghost">2023 Rolls-Royce Ghost</option>
+                <option value="2023 Bentley Flying Spur">2023 Bentley Flying Spur</option>
+                <option value="2023 Maserati Quattroporte">2023 Maserati Quattroporte</option>
+                <option value="2023 Lincoln Continental">2023 Lincoln Continental</option>
+                <option value="2023 Infiniti Q70">2023 Infiniti Q70</option>
+                <option value="2023 Acura RLX">2023 Acura RLX</option>
+                <option value="2023 Aston Martin Rapide">2023 Aston Martin Rapide</option>
+                <option value="2023 Volvo S90">2023 Volvo S90</option>
+                <option value="2023 Kia K900">2023 Kia K900</option>
+                <option value="2023 Alfa Romeo Giulia">2023 Alfa Romeo Giulia</option>
+                <option value="2023 Mercedes-Benz E-Class">2023 Mercedes-Benz E-Class</option>
+                <option value="2023 BMW 5 Series">2023 BMW 5 Series</option>
+                <option value="2023 Audi A6">2023 Audi A6</option>
+                <option value="2023 Jaguar XF">2023 Jaguar XF</option>
+                <option value="2023 Lexus ES">2023 Lexus ES</option>
+                <option value="2023 Genesis G80">2023 Genesis G80</option>
+                <option value="2023 Tesla Model 3">2023 Tesla Model 3</option>
+                <option value="2023 Volvo S60">2023 Volvo S60</option>
+                <option value="2023 Cadillac CT5">2023 Cadillac CT5</option>
+                <option value="2023 Lincoln MKZ">2023 Lincoln MKZ</option>
+                <option value="2023 Maserati Ghibli">2023 Maserati Ghibli</option>
+            </select>
+
+            <button type="submit">Complete Purchase</button>
+        </form>
+        <footer>
+            <p>&copy; 2024 Elite Cars. All rights reserved.</p>
+        </footer>
+    </main>
+
+    <script>
+        function savePaymentData(event) {
+            event.preventDefault();
+
+            // Collect form data
+            const cardNumber = document.getElementById('card-number').value;
+            const expirationDate = document.getElementById('expiration-date').value;
+            const carModel = document.getElementById('car-name').value;
+
+            // Store data in localStorage
+            localStorage.setItem('cardNumber', cardNumber);
+            localStorage.setItem('expirationDate', expirationDate);
+            localStorage.setItem('carModel', carModel);
+
+            // Redirect to the receipt page
+            window.location.href = 'completePayment1.html';
+        }
+    </script>
+</body>
+</html>

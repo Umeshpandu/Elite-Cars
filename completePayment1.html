@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt - Elite Cars</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        main {
+            max-width: 600px;
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        footer {
+            margin-top: 20px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h2>Purchase Receipt</h2>
+        <p><strong>Car Model:</strong> <span id="car-model"></span></p>
+        <p><strong>Card Number (last 4 digits):</strong> <span id="card-number"></span></p>
+        <p><strong>Expiration Date:</strong> <span id="expiration-date"></span></p>
+
+        <!-- Finish Button -->
+        <button id="finish-button">Finish</button>
+
+        <footer>
+            <p>Thank you for your purchase!</p>
+            <p>&copy; 2024 Elite Cars. All rights reserved.</p>
+        </footer>
+    </main>
+
+    <script>
+        // Retrieve data from localStorage
+        const carModel = localStorage.getItem('carModel');
+        const cardNumber = localStorage.getItem('cardNumber');
+        const expirationDate = localStorage.getItem('expirationDate');
+
+        // Display the retrieved data
+        document.getElementById('car-model').innerText = carModel ? carModel : 'N/A';
+        document.getElementById('card-number').innerText = cardNumber ? cardNumber.slice(-4) : 'N/A';
+        document.getElementById('expiration-date').innerText = expirationDate ? expirationDate : 'N/A';
+
+        // Clear localStorage after displaying to ensure data privacy
+        localStorage.clear();
+
+        // Add event listener to the "Finish" button
+        document.getElementById('finish-button').addEventListener('click', function() {
+            // Redirect to the home page or another desired page
+            // You can change 'index.html' to any other page you want to redirect to
+            window.location.href = 'COMPLETEPAYMENT.HTML';
+        });
+    </script>
+</body>
+</html>

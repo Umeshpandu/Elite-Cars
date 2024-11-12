@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Cars - Receipt</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .receipt-container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .receipt-header {
+            text-align: center;
+            color: rgb(73, 145, 183);
+            margin-bottom: 20px;
+        }
+
+        .receipt-header h2 {
+            margin: 0;
+        }
+
+        .receipt-content {
+            line-height: 1.6;
+        }
+
+        .receipt-content .detail {
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .receipt-footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="receipt-container">
+        <div class="receipt-header">
+            <h2>Elite Cars - Payment Receipt</h2>
+            <p>Thank you for your purchase!</p>
+        </div>
+
+        <div class="receipt-content">
+            <div class="detail">
+                <span class="bold">Customer Name:</span>
+                <span id="customerName"></span>
+            </div>
+            <div class="detail">
+                <span class="bold">Email:</span>
+                <span id="customerEmail"></span>
+            </div>
+            <div class="detail">
+                <span class="bold">Car Model:</span>
+                <span id="carModel"></span>
+            </div>
+            <div class="detail">
+                <span class="bold">Rental Duration:</span>
+                <span id="rentalDuration"></span>
+            </div>
+            <div class="detail">
+                <span class="bold">Total Amount:</span>
+                <span id="totalAmount"></span>
+            </div>
+            <div class="detail">
+                <span class="bold">Transaction Date:</span>
+                <span id="transactionDate"></span>
+            </div>
+        </div>
+
+        <div class="receipt-footer">
+            <p>&copy; 2024 Elite Cars. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        // Retrieve the data from localStorage and populate the receipt page
+        document.getElementById('customerName').textContent = localStorage.getItem('cardholderName');
+        document.getElementById('carModel').textContent = localStorage.getItem('carName');
+        document.getElementById('rentalDuration').textContent = localStorage.getItem('rentalTime') + " hours";
+        document.getElementById('totalAmount').textContent = "$" + (parseInt(localStorage.getItem('rentalTime')) * 100); // Example calculation for total price
+        document.getElementById('transactionDate').textContent = new Date().toLocaleDateString();
+    </script>
+</body>
+</html>
